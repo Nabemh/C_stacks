@@ -4,7 +4,7 @@
 stack[ARR_SIZE];
 int top = -1;
 
-int push(value){
+int push(int value){
     if (top == ARR_SIZE - 1) {
         printf("Array is full, cannot add new value\n");
         return 1;
@@ -22,6 +22,7 @@ int pop(void){
     } else {
         stack[top] = 0;
         top = -1;
+        return 0;
     }
 }
 
@@ -33,5 +34,9 @@ int main(void) {
     push(2);
     push(1);
 
+    for (int i = 0; i <= top; i++){
+        printf("%d ", stack[i]);
+    }
+    putchar('\n');
     return (0);
 }
